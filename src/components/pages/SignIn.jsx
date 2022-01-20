@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { SIGN_IN_INITIAL_VALUES } from "../../constant/formik-initial-values";
 import { SIGN_IN_VALIDATION_SCHEMA } from "../../constant/formik-validation";
 import { useSignInUser } from "../../hooks/useSignInUser";
+import Loading from "../common/web/loading/Loading";
 const SignIn = () => {
   const { mutate, loading, error } = useSignInUser();
   const formik = useFormik({
@@ -32,7 +33,9 @@ const SignIn = () => {
               placeholder="Please Enter your Username"
             />
             {formik.errors.username && formik.touched.username && (
-              <small className="text-danger">{formik.errors.username}</small>
+              <small className="text-danger form_validation_msg_small__container">
+                {formik.errors.username}
+              </small>
             )}
           </div>
           <div className="form-group w-75 my-3">
@@ -48,11 +51,13 @@ const SignIn = () => {
               placeholder="Please Enter your Password"
             />
             {formik.errors.password && formik.touched.password && (
-              <small className="text-danger">{formik.errors.password}</small>
+              <small className="text-danger form_validation_msg_small__container">
+                {formik.errors.password}
+              </small>
             )}
           </div>
           {loading ? (
-            "Loading..."
+            <Loading />
           ) : (
             <button
               type="submit"
@@ -62,7 +67,9 @@ const SignIn = () => {
             </button>
           )}
           {error.isError && (
-            <small className="text-danger">{error.errorMsg}</small>
+            <small className="mt-2 text-danger form_error_msg_small__container">
+              {error.errorMsg}
+            </small>
           )}
         </form>
       </div>
