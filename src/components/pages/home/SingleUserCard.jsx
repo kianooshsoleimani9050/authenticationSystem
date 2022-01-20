@@ -11,21 +11,25 @@ const SingleUserCard = ({
 }) => {
   return (
     <div className={`p-2 m-0 ${col} ${className}`}>
-      <div className="p-0 m-0 border d-flex flex-column align-items-center justify-content-center">
-        <img src={avatar} alt="" className="w-100" />
-        <div className="p-0 px-1 m-0 w-100 d-flex align-items-center justify-content-between">
-          <span>First Name</span>
+      <div className="p-0 m-0 h-100 rounded shadow-sm border d-flex flex-column align-items-center justify-content-between">
+        <img src={avatar} alt="" className="w-100 mb-2" />
+        <div className="p-0 px-1 m-0 w-100 border-bottom d-flex align-items-center justify-content-between">
+          <b>First Name</b>
           <span>{firstName}</span>
         </div>
-        <div className="p-0 px-1 m-0 w-100 d-flex align-items-center justify-content-between">
-          <span>Last Name</span>
+        <div className="p-0 px-1 m-0 w-100 border-bottom d-flex align-items-center justify-content-between">
+          <b>Last Name</b>
           <span>{lastName}</span>
         </div>
         <div className="p-0 px-1 m-0 w-100 d-flex flex-column">
-          <span>Email</span>
+          <b>Email</b>
           <span>{email}</span>
         </div>
-        {path && <Link to={path}>See detail</Link>}
+        {path && (
+          <Link to={path} className="my-2">
+            See detail
+          </Link>
+        )}
       </div>
     </div>
   );
