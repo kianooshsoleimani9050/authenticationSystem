@@ -1,0 +1,16 @@
+.loading_line_div__container {
+  width: 3px;
+  height: 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(253, 197, 197, 1) 30%,
+    rgba(242, 152, 222, 1) 94%
+  );
+  border-radius: 5px;
+  animation: loading-waves 1s linear infinite;
+  @for $i from 1 through 7 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.2s;
+    }
+  }
+}
