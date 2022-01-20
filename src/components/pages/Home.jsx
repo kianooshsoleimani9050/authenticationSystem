@@ -1,4 +1,5 @@
 import { useFetchData } from "../../hooks/useFetchData";
+import Loading from "../common/web/loading/Loading";
 import SingleUserCard from "./home/SingleUserCard";
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
   return (
     <div className="p-2 p-md-4 m-0 row">
       {loading ? (
-        "Loading"
+        <Loading />
       ) : (
         <>
           {result?.data?.map(({ id, email, first_name, last_name, avatar }) => (

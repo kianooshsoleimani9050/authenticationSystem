@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFetchData } from "../../hooks/useFetchData";
+import Loading from "../common/web/loading/Loading";
 import SingleUserCard from "./home/SingleUserCard";
 const UserDetail = () => {
   const { id } = useParams();
@@ -9,7 +10,7 @@ const UserDetail = () => {
   return (
     <div className="p-0 m-0 row align-items-center justify-content-center">
       {loading ? (
-        "Loading"
+        <Loading />
       ) : (
         <SingleUserCard
           key={`singleUserCard${id}`}
