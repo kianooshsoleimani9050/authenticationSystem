@@ -1,0 +1,27 @@
+.sign_in_page_div__container {
+  width: 100%;
+  height: 100vh;
+  background: $pink-color;
+  background: linear-gradient(
+    90deg,
+    rgba(253, 197, 197, 1) 30%,
+    rgba(242, 152, 222, 1) 94%
+  );
+}
+.sign_in_form__container {
+  background-color: $white-color;
+  width: 36.375rem;
+  @include mobile {
+    & {
+      width: 18.75rem;
+      height: 18.75rem;
+    }
+  }
+  height: 36.375rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba($color: $black-color, $alpha: 0.25);
+}
+.sign_in_form_button__submit {
+  background-color: $violet-color;
+  color: $white-color;
+}
